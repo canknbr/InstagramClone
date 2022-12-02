@@ -7,7 +7,7 @@ const Stories = () => {
     <View>
       <FlatList
         data={users}
-        keyExtractor={({ id }) => id}
+        keyExtractor={({ id }) => id.toString()}
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => <Story story={item} />}
