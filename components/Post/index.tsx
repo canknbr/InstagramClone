@@ -8,6 +8,7 @@ interface IPropsPost {
     id: number;
     image: string;
     name: string;
+    caption: string;
   };
 }
 const Post = ({ post }: IPropsPost) => {
@@ -17,9 +18,14 @@ const Post = ({ post }: IPropsPost) => {
         marginVertical: 10,
       }}
     >
-      <PostHeader url={post.image} />
+      <PostHeader url={post.image} name={post.name} />
       <PostContent image={post.image} />
-      <PostFooter />
+      <PostFooter
+        likes={post.id}
+        caption={post.caption}
+        username={post.name}
+        date="2 days ago"
+      />
     </View>
   );
 };

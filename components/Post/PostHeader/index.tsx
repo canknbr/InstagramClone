@@ -4,8 +4,9 @@ import ProfilePicture from '../../ProfilePicture';
 import { Entypo } from '@expo/vector-icons';
 interface IPropsPost {
   url: string;
+  name: string;
 }
-const PostHeader = ({ url }: IPropsPost) => {
+const PostHeader = ({ url, name }: IPropsPost) => {
   return (
     <View
       style={{
@@ -15,7 +16,15 @@ const PostHeader = ({ url }: IPropsPost) => {
         marginBottom: 10,
       }}
     >
-      <ProfilePicture url={url} size={55} />
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}
+      >
+        <ProfilePicture url={url} size={55} />
+        <Text style={{ color: 'white', marginLeft: 6 }}>{name}</Text>
+      </View>
       <Entypo
         name="dots-three-vertical"
         size={24}
